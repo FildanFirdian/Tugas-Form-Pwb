@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="font-family: Arial, sans-serif;
+
+ <body style="font-family: Arial, sans-serif;
 margin: 0;
 padding: 0;
 justify-content: center;
@@ -24,10 +25,24 @@ background-size: cover;">
     color: #ffffff;
     padding: 20px;
 ">
-    <h1>Selamat Datang Pengguna Baru</h1>
-    <input type="image" src="FB_IMG_1696818193320.jpg" width="320" height="170"><br>
-    <h3>Terima kasih telah bergabung dengan tim kami</h3>
-    <h3>Semoga kamu menikmati pembelajaran :)  </h3>
+   
+    First Name <?php echo $_POST["fname"]; ?><br> 
+    Last Name <?php echo $_POST["lname"]; ?><br>
+    Your Gender <?php echo $_POST["gender"]; ?><br>
+    Your nationality <?php echo $_POST["nationality"];?><br>
+    Your language <?php
+        if(isset($_POST['language'])) {
+            $languages = $_POST["language"];
+            echo "Menggunakan bahasa ";
+            foreach($languages as $language) {
+                echo $language . ", ";
+            }
+            echo "<br>";
+        } else {
+            echo "Anda belum memilih bahasa<br>";
+       }; ?><br>
+   Your Message :  <br><?php echo $_POST["message"]; ?>
+    </body>
 </div>
 </body>
 </html>
